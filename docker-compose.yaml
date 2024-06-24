@@ -12,6 +12,7 @@ services:
     volumes:
       - grafana_data:/var/lib/grafana
       - ./grafana/provisioning/:/etc/grafana/provisioning/
+      - /etc/localtime:/etc/localtime:ro
     depends_on:
       - prometheus
       - loki
@@ -23,6 +24,7 @@ services:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
       - ./alertas:/etc/prometheus/alert.rules
+      - /etc/localtime:/etc/localtime:ro
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -43,6 +45,7 @@ services:
     volumes:
       - ./loki-config.yml:/etc/loki/local-config.yaml
       - loki_data:/loki
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - "3100:3100"
 
@@ -51,6 +54,7 @@ services:
     container_name: alertmanager
     volumes:
       - ./alertmanager/config.yml:/etc/alertmanager/config.yml
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - "9093:9093"
     command:
