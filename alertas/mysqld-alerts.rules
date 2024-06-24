@@ -1,0 +1,20 @@
+groups:
+- name: mysql-alerts
+  rules:
+  - alert: MySQLInstanceDown
+    expr: mysql_up == 0
+    for: 5m
+    labels:
+      severity: critical
+    annotations:
+      summary: "MySQL instance {{ $labels.instance }} down"
+      description: "MySQL instance {{ $labels.instance }} is down for more than 5 minutes."
+
+  - alert: MySQLHighQueryTime
+    expr: avg(mysql_global_status_questions) by (instance) > 100
+    for: 10m
+    labels:
+      severity: warning
+    annotations:
+      summary: "High MySQL query time on {{ $labels.instance }}"
+      description: "MySQL instance {{ $labels.instance }} has high query time for more than 10 minutes."

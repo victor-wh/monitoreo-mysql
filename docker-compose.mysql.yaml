@@ -1,0 +1,32 @@
+version: '3.3'
+
+services:
+  #mysql:
+  #  image: mysql:5.7
+  #  container_name: mysql
+  #  environment:
+  #    - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+  #    - MYSQL_DATABASE=${MYSQL_DATABASE}
+  #    - MYSQL_USER=${MYSQL_USER}
+  #    - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+  #  volumes:
+  #    - mysql_data:/var/lib/mysql
+  #    - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+  #  ports:
+  #    - "3306:3306"
+
+  mysqld-exporter:
+    image: prom/mysqld-exporter:latest
+    container_name: mysqld-exporter
+    environment:
+      - DATA_SOURCE_NAME=${MYSQL_USER}:${MYSQL_PASSWORD}@tcp(mysql:3306)/${MYSQL_DATABASE}
+    depends_on:
+      - mysql
+    ports:
+      - "9104:9104"
+    volumes:
+      - ./test_exporter.cnf:/etc/my_exporter/test_exporter.cnf
+    command: --config.my-cnf=/etc/my_exporter/test_exporter.cnf
+
+volumes:
+  mysql_data:

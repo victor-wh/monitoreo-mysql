@@ -1,0 +1,9 @@
+[client]
+host=192.168.23.43
+port=3306
+socket=/var/run/mysqld/mysqld.sock
+user=root
+password=rootpassword
+[client.server1]
+user = bar
+password = bar123
