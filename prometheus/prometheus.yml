@@ -26,7 +26,7 @@ scrape_configs:
     static_configs:
     - targets:
       # All mysql hostnames or unix sockets to monitor.
-      - 192.168.23.43:3306
+      - 138.197.68.80:3306
       - unix:///run/mysqld/mysqld.sock
     relabel_configs:
     - source_labels: [__address__]
@@ -35,4 +35,4 @@ scrape_configs:
       target_label: instance
     - target_label: __address__
       # The mysqld_exporter host:port
-      replacement: 192.168.23.43:9104
+      replacement: 174.138.52.52:9104
