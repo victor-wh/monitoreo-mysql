@@ -36,7 +36,6 @@ services:
     ports:
       - "9090:9090"
 
-
   loki:
     image: grafana/loki:latest
     container_name: loki
@@ -54,7 +53,10 @@ services:
     ports:
       - "9093:9093"
     command:
-      - "--web.enable-lifecycle"
+      - '--config.file=/etc/alertmanager/config.yaml'
+      - '--storage.path=/alertmanager'
+      - '--data.retention=120h'
+      - '--log.level=info'
 
 volumes:
   grafana_data:
