@@ -5,17 +5,22 @@
 - http://138.197.68.80:9100 -> Node Exporter de la VM donde esta alojada la base de datos
 
 
-
 # Directorios
 
 ```bash
 opt
-├── grafana-prometheus
-|   ├── docker-compose.yaml[](url)
-|   ├── docker-compose.mysql.yaml.old
+├── monitoreo-mysql
+|   ├── docker-compose.yaml
+|   ├── docker-compose.mysql.yaml
 |   ├── loki-config.yml
 |   ├── prometheus.yml
 |   ├── test_exporter.cnf
+|   ├── init.sql
+|   ├── .env
+|   ├── init.sql
+|   ├── prometheus
+        |── prometheus.yml
+
 ```
 
 # Monitoreo para MySQL
