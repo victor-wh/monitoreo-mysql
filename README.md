@@ -15,3 +15,14 @@ o tambien
 ```
 docker logs <container_name>
 ```
+
+### Manejar los servicios
+El archivo que contiene todos los archivos se llama docker-compose.yaml 
+Para stopear los servicios
+```
+docker-compose down
+```
+Para levantar los servicios
+```
+docker-compose up -d
+```
