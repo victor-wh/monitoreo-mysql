@@ -8,16 +8,16 @@
 
 # Directorios
 
-:::text
-test
-├── blandit
-│   ├── [234K]  bibendum.txt
-
 ```bash
 opt
 ├── grafana-prometheus
-|   ├── docker-compose.yaml
+|   ├── docker-compose.yaml[](url)
+|   ├── docker-compose.mysql.yaml.old
+|   ├── loki-config.yml
+|   ├── prometheus.yml
+|   ├── test_exporter.cnf
 ```
+
 # Monitoreo para MySQL
 
 ### Para revisar los logs de los servicios
