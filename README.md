@@ -1,3 +1,9 @@
+# Directorios
+
+/opt
+  /grafana-prometheus
+    docker-compose.yaml
+
 # Monitoreo para MySQL
 
 ### Para revisar los logs de los servicios
