@@ -1,8 +1,15 @@
+# URLS y endpoints
+http://174.138.52.52:3000 -> Grafana
+http://174.138.52.52:9090 -> Prometheus
+http://174.138.52.52:9104 -> MySQL Exporter
+http://138.197.68.80:9100 -> Node Exporter de la VM donde esta alojada la base de datos
+
+
 # Directorios
 
 /opt
-  --/grafana-prometheus
-  ---docker-compose.yaml
+|-/grafana-prometheus
+  |-docker-compose.yaml
 
 # Monitoreo para MySQL
 
