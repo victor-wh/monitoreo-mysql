@@ -5,11 +5,17 @@
 - http://138.197.68.80:9100 -> Node Exporter de la VM donde esta alojada la base de datos
 
 
+
 # Directorios
 
-/opt
-|-/grafana-prometheus
-  |-docker-compose.yaml
+:::text
+test
+├── blandit
+│   ├── [234K]  bibendum.txt
+
+opt
+├── grafana-prometheus
+|   ├── docker-compose.yaml
 
 # Monitoreo para MySQL
 
