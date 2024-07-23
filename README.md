@@ -8,19 +8,27 @@
 # Directorios
 
 ```bash
-opt
-├── monitoreo-mysql
-|   ├── docker-compose.yaml
-|   ├── docker-compose.mysql.yaml
-|   ├── loki-config.yml
-|   ├── prometheus.yml
-|   ├── test_exporter.cnf
-|   ├── init.sql
-|   ├── .env
-|   ├── init.sql
-|   ├── prometheus
-        |── prometheus.yml
-
+.
+├── README.md
+├── alertas
+│   ├── mysqld-alerts.rules
+│   └── node-alerts.rules
+├── alertmanager
+│   └── config.yaml
+├── docker-compose.mysql.yaml
+├── docker-compose.yaml
+├── grafana
+│   └── provisioning
+│       ├── dashboards
+│       │   └── dashboard.yml
+│       └── datasources
+│           └── datasource.yaml
+├── init.sql
+├── loki-config.yml
+├── prometheus
+│   ├── alert.rules
+│   └── prometheus.yml
+└── test_exporter.cnf
 ```
 
 # Monitoreo para MySQL
