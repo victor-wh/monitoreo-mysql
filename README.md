@@ -1,8 +1,8 @@
 # Directorios
 
 /opt
-  /grafana-prometheus
-    docker-compose.yaml
+--/grafana-prometheus
+---docker-compose.yaml
 
 # Monitoreo para MySQL
 
